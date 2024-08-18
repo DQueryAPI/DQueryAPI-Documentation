@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DQueryAPI Documentation - v1.0.0</title>
+    <link href="https://fonts.googleapis.com/css2?family=tajawal:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'tajawal', Light;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 20px;
+            color: #333;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            color: #444;
+            margin-bottom: 20px;
+        }
+
+        h2 {
+            font-size: 20px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        code {
+            background-color: #eaeaea;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        pre {
+            background-color: #333;
+            color: #fff;
+            padding: 10px;
+            border-radius: 8px;
+            overflow-x: auto;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+
+        table th {
+            background-color: #f0f0f0;
+        }
+
+        .error {
+            color: #e74c3c;
+        }
+
+        footer {
+            margin-top: 20px;
+            text-align: center;
+            font-size: 14px;
+            color: #777;
+        }
+
+        footer a {
+            color: #777;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>DQueryAPI Documentation: Fetch User or Bot Information</h1>
+        <p>This API route allows you to fetch detailed information about a Discord user or bot based on their ID.</p>
+
+        <h2>Endpoint</h2>
+        <p>GET /v1/fetch/:id</p>
+
+        <h2>Parameters</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>Parameter</th>
+                    <th>Type</th>
+                    <th>Required</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>id</td>
+                    <td>String</td>
+                    <td>Yes</td>
+                    <td>The ID of the user or bot to fetch information for.</td>
+                </tr>
+                <tr>
+                    <td>type</td>
+                    <td>Query</td>
+                    <td>Yes</td>
+                    <td>Specifies whether to fetch information for a user or a bot.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Responses</h2>
+
+        <h3>Success Response (User)</h3>
+        <pre>
+{
+    "cache_expiry": 7200,
+    "cached": false,
+    "data": {
+        "basicInfo": {
+            "id": "246354195979042817",
+            "bot": false,
+            "username": "amtix",
+            "legacyUsername": "amtix#0",
+            "globalName": "アムティックス",
+            "tag": "amtix#0",
+            "discriminator": null,
+            "createdTimestamp": 1478805817361
+        },
+        "nitroData": null,
+        "decoration": {
+            "avatarFrame": "No avatar decoration",
+            "skuId": null,
+            "profileColors": 1118740
+        },
+        "assets": {
+            "badges": [
+                {
+                    "name": "HypeSquadOnlineHouse1",
+                    "icon": "No cdn found :)..."
+                },
+                {
+                    "name": "ActiveDeveloper",
+                    "icon": "No cdn found :)..."
+                }
+            ],
+            "defaultAvatarURL": "https://cdn.discordapp.com/embed/avatars/5.png",
+            "avatarURL": "https://cdn.discordapp.com/avatars/246354195979042817/40553e77206568af3b8df71d2b09bfce.webp?size=1024",
+            "bannerURL": null
+        }
+    }
+}</pre>
+
+        <h3>Success Response (Bot)</h3>
+        <pre>
+{
+    "cache_expiry": 7200,
+    "cached": false,
+    "data": {
+        "basicInfo": {
+            "id": "781294735167193099",
+            "bot": true,
+            "username": "FlashSystem",
+            "legacyUsername": "FlashSystem#3149",
+            "globalName": null,
+            "tag": "FlashSystem#3149",
+            "discriminator": "3149",
+            "createdTimestamp": 1606345580618
+        },
+        "nitroData": null,
+        "decoration": {
+            "avatarFrame": "No avatar decoration",
+            "skuId": null,
+            "profileColors": "Not available"
+        },
+        "assets": {
+            "badges": [
+                {
+                    "name": "VerifiedBot",
+                    "icon": "I'll make cdn later :)..."
+                }
+            ],
+            "defaultAvatarURL": "https://cdn.discordapp.com/embed/avatars/4.png",
+            "avatarURL": "https://cdn.discordapp.com/avatars/781294735167193099/0a8f4af4550dd2e5e18075cc5f800d31.webp?size=1024",
+            "bannerURL": "https://cdn.discordapp.com/banners/781294735167193099/8ac061708822c5ce0e8ea28a6daa0b1b.webp?size=1024",
+            "serversCount": 262
+        }
+    }
+}</pre>
+
+        <h3>Error Responses</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Status Code</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>404 Not Found</td>
+                    <td>User or bot not found.</td>
+                </tr>
+                <tr>
+                    <td>400 Bad Request</td>
+                    <td>Invalid type parameter. The type must be either user or bot.</td>
+                </tr>
+                <tr>
+                    <td>500 Internal Server Error</td>
+                    <td>An error occurred while fetching the data.</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <h2>Example Request</h2>
+        <pre>GET /v1/fetch/246354195979042817?type=user</pre>
+        <pre>GET /v1/fetch/781294735167193099?type=bot</pre>
+
+        <footer>
+            &copy; 2024 <a href="https://amtixdevwebsite.pages.dev/">AmtiXDev</a>
+        </footer>
+    </div>
+</body>
+</html>

@@ -4,34 +4,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DQueryAPI Documentation - v1.0.0</title>
-    <link href="https://fonts.googleapis.com/css2?family=tajawal:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;600&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'tajawal', Light;
-            background-color: #f4f4f4;
+            font-family: 'Tajawal', sans-serif;
+            background-color: #121212;
             margin: 0;
             padding: 20px;
-            color: #333;
+            color: #e0e0e0;
         }
 
         .container {
             max-width: 800px;
             margin: 0 auto;
-            background-color: #fff;
+            background-color: #1e1e1e;
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 100px rgba(128, 0, 128, 0.4); /* Purple blur filter */
+            backdrop-filter: blur(25px);
         }
 
         h1 {
             font-size: 24px;
-            color: #444;
+            color: #bb86fc;
             margin-bottom: 20px;
         }
 
         h2 {
             font-size: 20px;
-            color: #555;
+            color: #bb86fc;
             margin-bottom: 10px;
         }
 
@@ -41,17 +42,39 @@
         }
 
         code {
-            background-color: #eaeaea;
+            background-color: #2e2e2e;
             padding: 2px 4px;
             border-radius: 4px;
+            color: #ffcb6b;
         }
 
         pre {
-            background-color: #333;
-            color: #fff;
+            background-color: #2e2e2e;
+            color: #dcdcdc;
             padding: 10px;
             border-radius: 8px;
             overflow-x: auto;
+            font-family: Consolas, 'Courier New', monospace;
+        }
+
+        pre .string {
+            color: #ce9178;
+        }
+
+        pre .number {
+            color: #b5cea8;
+        }
+
+        pre .boolean {
+            color: #569cd6;
+        }
+
+        pre .null {
+            color: #569cd6;
+        }
+
+        pre .key {
+            color: #9cdcfe;
         }
 
         table {
@@ -61,28 +84,29 @@
         }
 
         table th, table td {
-            border: 1px solid #ddd;
+            border: 1px solid #3c3c3c;
             padding: 8px;
             text-align: left;
         }
 
         table th {
-            background-color: #f0f0f0;
+            background-color: #2e2e2e;
+            color: #bb86fc;
         }
 
         .error {
-            color: #e74c3c;
+            color: #cf6679;
         }
 
         footer {
             margin-top: 20px;
             text-align: center;
             font-size: 14px;
-            color: #777;
+            color: #888;
         }
 
         footer a {
-            color: #777;
+            color: #bb86fc;
             text-decoration: none;
         }
 
@@ -129,92 +153,48 @@
 
         <h3>Success Response (User)</h3>
         <pre>
-{
-    "v": 1,
+<span class="key">{
+    "v": <span class="number">1</span>,
     "data": {
         "basicInfo": {
-            "id": "651322441989226499",
-            "bot": false,
-            "username": "flarelost",
-            "globalName": "ZorX",
-            "tag": "flarelost#0",
-            "discriminator": null,
-            "createdTimestamp": 1575357771156
+            "id": "<span class="string">651322441989226499</span>",
+            "bot": <span class="boolean">false</span>,
+            "username": "<span class="string">flarelost</span>",
+            "globalName": "<span class="string">ZorX</span>",
+            "tag": "<span class="string">flarelost#0</span>",
+            "discriminator": <span class="null">null</span>,
+            "createdTimestamp": <span class="number">1575357771156</span>
         },
-        "nitroData": null,
+        "nitroData": <span class="null">null</span>,
         "decoration": {
-            "avatarFrame": "https://cdn.discordapp.com/avatar-decoration-presets/a_8ffa2ba9bff18e96b76c2e66fd0d7fa3.png",
-            "skuId": "1144307957425778779",
-            "exipres_at": null,
-            "profileColors": "#000000"
+            "avatarFrame": "<span class="string">https://cdn.discordapp.com/avatar-decoration-presets/a_8ffa2ba9bff18e96b76c2e66fd0d7fa3.png</span>",
+            "skuId": "<span class="string">1144307957425778779</span>",
+            "exipres_at": <span class="null">null</span>,
+            "profileColors": "<span class="string">#000000</span>"
         },
         "assets": {
             "badges": [
                 {
-                    "name": "HypeSquadOnlineHouse1",
-                    "icon": "No cdn found :)..."
+                    "name": "<span class="string">HypeSquadOnlineHouse1</span>",
+                    "icon": "<span class="string">No cdn found :)...</span>"
                 },
                 {
-                    "name": "ActiveDeveloper",
-                    "icon": "No cdn found :)..."
+                    "name": "<span class="string">ActiveDeveloper</span>",
+                    "icon": "<span class="string">No cdn found :)...</span>"
                 }
             ],
-            "defaultAvatarURL": "https://cdn.discordapp.com/embed/avatars/0.png",
-            "avatarURL": "https://cdn.discordapp.com/avatars/651322441989226499/392fe6548dc98fd3a5acac9798bc1a72.webp?size=1024",
-            "bannerURL": null
+            "defaultAvatarURL": "<span class="string">https://cdn.discordapp.com/embed/avatars/0.png</span>",
+            "avatarURL": "<span class="string">https://cdn.discordapp.com/avatars/651322441989226499/392fe6548dc98fd3a5acac9798bc1a72.webp?size=1024</span>",
+            "bannerURL": <span class="null">null</span>
         },
         "clan": {
-            "identity_guild_id": "1141482735052001320",
-            "identity_enabled": true,
-            "tag": "META",
-            "badge": "https://cdn.discordapp.com/clan-badges/1141482735052001320/4bd121681a9f38fff8aea622d74534e4"
+            "identity_guild_id": "<span class="string">1141482735052001320</span>",
+            "identity_enabled": <span class="boolean">true</span>,
+            "tag": "<span class="string">META</span>",
+            "badge": "<span class="string">https://cdn.discordapp.com/clan-badges/1141482735052001320/4bd121681a9f38fff8aea622d74534e4</span>"
         }
     },
-    "ms": 103
-}</pre>
-
-        <h3>Success Response (Bot)</h3>
-        <pre>
-{
-    "v": 1,
-    "data": {
-        "basicInfo": {
-            "id": "781294735167193099",
-            "bot": true,
-            "username": "FlashSystem",
-            "legacyUsername": "FlashSystem#3149",
-            "globalName": null,
-            "tag": "FlashSystem#3149",
-            "discriminator": "3149",
-            "createdTimestamp": 1606345580618,
-            "tags": [
-                "backup",
-                "economy",
-                "giveaways",
-                "moderation",
-                "system"
-            ]
-        },
-        "nitroData": null,
-        "decoration": {
-            "avatarFrame": "No avatar decoration",
-            "skuId": null,
-            "profileColors": "Not available"
-        },
-        "assets": {
-            "badges": [
-                {
-                    "name": "VerifiedBot",
-                    "icon": "I'll make cdn later :)..."
-                }
-            ],
-            "defaultAvatarURL": "https://cdn.discordapp.com/embed/avatars/4.png",
-            "avatarURL": "https://cdn.discordapp.com/avatars/781294735167193099/0a8f4af4550dd2e5e18075cc5f800d31.webp?size=1024",
-            "bannerURL": "https://cdn.discordapp.com/banners/781294735167193099/8ac061708822c5ce0e8ea28a6daa0b1b.webp?size=1024",
-            "serversCount": "261"
-        }
-    },
-    "ms": 103
+    "ms": <span class="number">103</span>
 }</pre>
 
         <h3>Error Responses</h3>
